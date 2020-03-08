@@ -616,6 +616,11 @@ textarea {
   background: url("./assets/images/mail.svg") no-repeat;
 }
 
+.contact__link {
+  text-decoration: none;
+  color: #f0d8d9;
+}
+
 
 .footer {
   padding: 21px 0 22px 0;
