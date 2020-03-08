@@ -276,7 +276,7 @@ header {
   font-size: 1.2rem;
 }
 
-.portfolio_item {
+.portfolio__item {
   margin-right: 9px;
   padding: 2px 7px 3px;
 
@@ -287,13 +287,19 @@ header {
   border-radius: 5px;
 }
 
-.portfolio_item:hover {
+.portfolio__item_active {
   color: #ffffff;
 
   border: 1px solid #ffffff;
 }
 
-.portfolio_item:active {
+.portfolio__item:hover {
+  color: #ffffff;
+
+  border: 1px solid #ffffff;
+}
+
+.portfolio__item:active {
   color: #000000;
 
   border: 1px solid #000000;
