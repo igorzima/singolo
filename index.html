@@ -26,18 +26,25 @@
       </div>
     </div>
   </header>
-  <section class="slider">
+  <section class="slider" id="slider">
     <div class="wrapper">
       <div class="layout layout-3-column">
         <div class="arrow">
-          <img class="left-arrow" src="./assets/images/left-arrow.png" alt="left-arrow">
+          <img class="left-arrow" id="left-arrow" src="./assets/images/left-arrow.png" alt="left-arrow">
         </div>
-        <div class="slider__info">
-          <img class="vertical-iPhone" src="assets/images/iPhone-vertical.png" alt="vertical" />
-          <img class="horizontal-iPhone" src="assets/images/iPhone-horizontal.png" alt="horizontal" />
+        <div class="slider__info" id="slide1">
+          <div class="dark-vertical hidden" id="dark-vertical"></div>
+          <img class="vertical-iPhone" id="vertical-phone" src="assets/images/iPhone-vertical.png" alt="vertical" />
+          <div class="dark-horizontal hidden" id="dark-horizontal"></div>
+          <img class="horizontal-iPhone" id="horizontal-phone" src="assets/images/iPhone-horizontal.png" alt="horizontal" />
         </div>
-        <div class="arrow">
-          <img class="right-arrow" src="./assets/images/right-arrow.png" alt="right-arrow">
+        <div class="slider__info hidden" id="slide2">
+          <img src="./assets/images/slider2-leftphone.png" alt="">
+          <img src="./assets/images/slider2-centralphone.png" alt="">
+          <img src="./assets/images/slider2-rightphone.png" alt="">
+        </div>
+        <div class="arrow" id="arrow">
+          <img class="right-arrow" id="right-arrow" src="./assets/images/right-arrow.png" alt="right-arrow">
         </div>
       </div>
     </div>
