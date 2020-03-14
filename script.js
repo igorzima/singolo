@@ -12,21 +12,65 @@ const DARK_VERTICAL = document.getElementById('dark-vertical');
 const DARK_HORIZONTAL = document.getElementById('dark-horizontal');
 
 let slide = 0;
-let dark = 0;
+let phoneOff = 0;
+let phone2Off = 0;
 
 NAVIGATION.addEventListener('click', (event) => {
-  NAVIGATION.querySelectorAll('a').forEach(el => el.classList.remove('navigation_active'));
-  event.target.classList.add('navigation_active');
+  if (event.target.classList.contains('navigation__link')) {
+    NAVIGATION.querySelectorAll('a').forEach(el => el.classList.remove('navigation_active'));
+    event.target.classList.add('navigation_active');
+  }
 })
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
-  PORTFOLIO_NAVIGATION.querySelectorAll('li').forEach(el => el.classList.remove('portfolio__item_active'));
-  event.target.classList.add('portfolio__item_active');
+  if (event.target.classList.contains('portfolio__item')) {
+    PORTFOLIO_NAVIGATION.querySelectorAll('li').forEach(el => el.classList.remove('portfolio__item_active'));
+    event.target.classList.add('portfolio__item_active');
+
+    let a = PORTFOLIO_LAYOUT.querySelectorAll('img');
+
+    function putToCache(elem, cache){
+      if(cache.indexOf(elem) !== -1){
+        return;
+      }
+      var i = Math.floor(Math.random()*(cache.length + 1));
+      cache.splice(i, 0, elem);
+    }
+
+    function madness(){
+      var cache = [];
+      return function(a, b){
+        putToCache(a, cache);
+        putToCache(b, cache);
+        return cache.indexOf(b) - cache.indexOf(a);
+      }
+    }
+
+    function shuffle(arr){
+      var compare = madness();
+      return arr.sort(compare);
+    }
+
+    let b = Array.from(a);
+    let shuffleB = shuffle(b);
+    PORTFOLIO_LAYOUT.innerHTML = "";
+    shuffleB.forEach(item => PORTFOLIO_LAYOUT.append(item));
+  }
 })
 
 PORTFOLIO_LAYOUT.addEventListener('click', (event) => {
-  PORTFOLIO_LAYOUT.querySelectorAll('img').forEach(el => el.classList.remove('portfolio__image_bordered'));
-  event.target.classList.add('portfolio__image_bordered');
+  if (event.target.classList.contains('portfolio__image')) {
+    PORTFOLIO_LAYOUT.querySelectorAll('img').forEach(el => el.classList.remove('portfolio__image_bordered'));
+    event.target.classList.add('portfolio__image_bordered');
+  } else {
+    PORTFOLIO_LAYOUT.querySelectorAll('img').forEach(el => el.classList.remove('portfolio__image_bordered'));
+  }
 })
 
 LEFT_ARROW.addEventListener('click', (event) => {
@@ -58,21 +102,23 @@ RIGHT_ARROW.addEventListener('click', (event) => {
 })
 
 VERTICAL_PHONE.addEventListener('click', (event) => {
-  if(dark === 1) {
+  if(phoneOff === 1) {
     DARK_VERTICAL.classList.remove('hidden');
-    dark--
-  } else if (dark === 0) {
+    phoneOff--
+  } else if (phoneOff === 0) {
     DARK_VERTICAL.classList.add('hidden');
-    dark++
+    phoneOff++
   }
+  console.log(phoneoff)
 })
 
 HORIZONTAL_PHONE.addEventListener('click', (event) => {
-  if(dark === 1) {
+  if(phone2Off === 1) {
     DARK_HORIZONTAL.classList.remove('hidden');
-    dark--
-  } else if (dark === 0) {
+    phone2Off--
+  } else if (phone2Off === 0) {
     DARK_HORIZONTAL.classList.add('hidden');
-    dark++
+    phone2Off++
   }
+  console.log(phone2off)
 })
