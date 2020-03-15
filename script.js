@@ -15,10 +15,6 @@ const CLOSE_BTN = document.getElementById('close-btn');
 const MAIL = document.getElementById('mail');
 const FNAME = document.getElementById('fname');
 
-let slide = 0;
-let phoneOff = 0;
-let phone2Off = 0;
-
 NAVIGATION.addEventListener('click', (event) => {
   if (event.target.classList.contains('navigation__link')) {
     NAVIGATION.querySelectorAll('a').forEach(el => el.classList.remove('navigation_active'));
@@ -72,53 +68,63 @@ PORTFOLIO_LAYOUT.addEventListener('click', (event) => {
 })
 
 LEFT_ARROW.addEventListener('click', (event) => {
-  if(slide === 0) {
+  if(SLIDER.classList.contains('slider-next')) {
+    SLIDER.classList.remove('slider-next')
+
+    SLIDE1.classList.remove('slide-left');
+    SLIDE1.classList.remove('slide-right');
+    SLIDE1.classList.add('slide-center');
+    SLIDE2.classList.remove('slide-center');
+    SLIDE2.classList.add('slide-left');
+    SLIDE2.classList.remove('slide-right');
+  } else {
     SLIDER.classList.add('slider-next')
-    SLIDE1.classList.add('hidden');
-    SLIDE2.classList.remove('hidden');
-    slide++
-  } else if(slide === 1) {
-    let a = SLIDER.classList.remove('slider-next')
-    let b = SLIDE1.classList.remove('hidden');
-    let с = SLIDE2.classList.add('hidden');
-    slide--
+
+    SLIDE1.classList.add('slide-left');
+    SLIDE1.classList.remove('slide-center');
+    SLIDE1.classList.remove('slide-right');
+    SLIDE2.classList.add('slide-center');
+    SLIDE2.classList.remove('slide-left');
+    SLIDE2.classList.remove('slide-right');
   }
 })
 
 RIGHT_ARROW.addEventListener('click', (event) => {
-  if (slide === 0) {
+  if (SLIDER.classList.contains('slider-next')) {
+    SLIDER.classList.remove('slider-next')
+
+    SLIDE1.classList.remove('slide-right');
+    SLIDE1.classList.remove('slide-left');
+    SLIDE1.classList.add('slide-center');
+    SLIDE2.classList.add('slide-right');
+    SLIDE2.classList.remove('slide-center');
+    SLIDE2.classList.remove('slide-left');
+  } else {
     SLIDER.classList.add('slider-next')
-    SLIDE1.classList.add('hidden');
-    SLIDE2.classList.remove('hidden');
-    slide++
-  } else if (slide === 1) {
-    let a = SLIDER.classList.remove('slider-next')
-    let b = SLIDE1.classList.remove('hidden');
-    let с = SLIDE2.classList.add('hidden');
-    slide--
+
+    SLIDE1.classList.add('slide-right');
+    SLIDE1.classList.remove('slide-center');
+    SLIDE1.classList.remove('slide-left');
+    SLIDE2.classList.add('slide-center');
+    SLIDE2.classList.remove('slide-right');
+    SLIDE2.classList.remove('slide-left');
   }
 })
 
 VERTICAL_PHONE.addEventListener('click', (event) => {
-  if(phoneOff === 1) {
+  if(DARK_VERTICAL.classList.contains('hidden')) {
     DARK_VERTICAL.classList.remove('hidden');
-    phoneOff--
-  } else if (phoneOff === 0) {
+  } else {
     DARK_VERTICAL.classList.add('hidden');
-    phoneOff++
   }
-  console.log(phoneoff)
 })
 
 HORIZONTAL_PHONE.addEventListener('click', (event) => {
-  if(phone2Off === 1) {
+  if(DARK_HORIZONTAL.classList.contains('hidden')) {
     DARK_HORIZONTAL.classList.remove('hidden');
-    phone2Off--
-  } else if (phone2Off === 0) {
+  } else {
     DARK_HORIZONTAL.classList.add('hidden');
-    phone2Off++
   }
-  console.log(phone2off)
 })
 
 SUBMIT.addEventListener('click', (event) => {
