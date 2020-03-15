@@ -10,6 +10,10 @@ const VERTICAL_PHONE = document.getElementById('vertical-phone');
 const HORIZONTAL_PHONE = document.getElementById('horizontal-phone');
 const DARK_VERTICAL = document.getElementById('dark-vertical');
 const DARK_HORIZONTAL = document.getElementById('dark-horizontal');
+const SUBMIT = document.getElementById('submit');
+const CLOSE_BTN = document.getElementById('close-btn');
+const MAIL = document.getElementById('mail');
+const FNAME = document.getElementById('fname');
 
 let slide = 0;
 let phoneOff = 0;
@@ -21,12 +25,6 @@ NAVIGATION.addEventListener('click', (event) => {
     event.target.classList.add('navigation_active');
   }
 })
-
-function getRandomInt(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min)) + min;
-}
 
 PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
   if (event.target.classList.contains('portfolio__item')) {
@@ -121,4 +119,31 @@ HORIZONTAL_PHONE.addEventListener('click', (event) => {
     phone2Off++
   }
   console.log(phone2off)
+})
+
+SUBMIT.addEventListener('click', (event) => {
+  const subject = document.getElementById('subject').value.toString();
+  const describe = document.getElementById('describe').value.toString();
+
+  if (MAIL.validity.valid && FNAME.validity.valid) {
+    event.preventDefault();
+
+    if (subject === 'Singolo') {
+      document.getElementById('topic').innerText = 'Тема: Singolo';
+    } else {
+      document.getElementById('topic').innerText = 'Без темы';
+    }
+
+    if (describe === 'Portfolio project') {
+      document.getElementById('description').innerText = 'Описание: Portfolio project';
+    } else {
+      document.getElementById('description').innerText = 'Без описания';
+    }
+
+    document.getElementById('message-block').classList.remove('hidden');
+  }
+})
+
+CLOSE_BTN.addEventListener('click', (event) => {
+  document.getElementById('message-block').classList.add('hidden');
 })

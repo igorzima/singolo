@@ -152,9 +152,9 @@
         <li class="portfolio__item">Artwork</li>
       </ul>
       <div class="layout layout-4-column" id="portfolio__layout">
-          <img class="portfolio__image 1" src="./assets/images/portfolio1.png" alt="portfolio1" />
-          <img class="portfolio__image 2" src="./assets/images/portfolio2.png" alt="portfolio2" />
-          <img class="portfolio__image 3" src="./assets/images/portfolio3.png" alt="portfolio3" />
+          <img class="portfolio__image" src="./assets/images/portfolio1.png" alt="portfolio1" />
+          <img class="portfolio__image" src="./assets/images/portfolio2.png" alt="portfolio2" />
+          <img class="portfolio__image" src="./assets/images/portfolio3.png" alt="portfolio3" />
           <img class="portfolio__image" src="./assets/images/portfolio4.png" alt="portfolio4" />
           <img class="portfolio__image" src="./assets/images/portfolio5.png" alt="portfolio5" />
           <img class="portfolio__image" src="./assets/images/portfolio6.png" alt="portfolio6" />
@@ -283,13 +283,21 @@
       <h2 class="quote__title">Get a Quote</h2>
       <p class="quote-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
       <div class="layout layout-2-column">
-        <form action="#" method="POST" class="form">
+        <form action="#" method="POST" class="form" id="form">
           <input type="text" name="fname" id="fname" placeholder="Name (Required)" required>
           <input type="email" name="mail" id="mail" class="mail" placeholder="Email (Required)" required>
           <input type="text" name="subject" placeholder="Subject" id="subject">
           <textarea name="describe" id="describe" placeholder="Describe your project in detail..."></textarea>
-          <input type="submit" value="Submit" class="submit-btn">
+          <input type="submit" value="Submit" class="submit-btn" id="submit">
         </form>
+        <div class="message-block hidden" id="message-block" >
+          <div class="message-window" id="message-window">
+            <p>Письмо отправлено</p>
+            <p class="topic" id="topic"></p>
+            <p class="description" id="description"></p>
+            <button id="close-btn">Ok</button>
+          </div>
+        </div>
         <div class="contact-info">
           <h3 class="contact-title">Contact Information</h3>
           <p class="contact-description">Quisque hendrerit purus dapibus, ornare nibh vitae, viver&shy;ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. 
