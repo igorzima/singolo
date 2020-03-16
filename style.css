@@ -393,6 +393,7 @@ header {
   max-width: 220px;
   margin-bottom: 20px;
   max-height: 187px;
+  cursor: pointer;
 }
 
 .portfolio__image_bordered {
