@@ -15,12 +15,24 @@ const CLOSE_BTN = document.getElementById('close-btn');
 const MAIL = document.getElementById('mail');
 const FNAME = document.getElementById('fname');
 
-NAVIGATION.addEventListener('click', (event) => {
-  if (event.target.classList.contains('navigation__link')) {
-    NAVIGATION.querySelectorAll('a').forEach(el => el.classList.remove('navigation_active'));
-    event.target.classList.add('navigation_active');
-  }
-})
+document.addEventListener('scroll', onScroll);
+
+function onScroll() {
+  const curPos = window.scrollY;
+  const section = document.querySelectorAll('body>section');
+  const links = document.querySelectorAll('.header__navigation a');
+
+  section.forEach((el) => {
+    if (el.offsetTop <= curPos + 2 && (el.offsetTop + el.offsetHeight) > curPos + 2) {
+      links.forEach((a) => {
+        a.classList.remove('navigation_active');
+        if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+          a.classList.add('navigation_active');    
+        }
+      })
+    }
+  })
+}
 
 PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
   if (event.target.classList.contains('portfolio__item')) {
@@ -136,12 +148,16 @@ SUBMIT.addEventListener('click', (event) => {
 
     if (subject === 'Singolo') {
       document.getElementById('topic').innerText = 'Тема: Singolo';
+    } else if (subject) {
+      document.getElementById('topic').innerText = subject;
     } else {
-      document.getElementById('topic').innerText = 'Без темы';
+      document.getElementById('topic').innerText = 'Без описания';
     }
 
     if (describe === 'Portfolio project') {
       document.getElementById('description').innerText = 'Описание: Portfolio project';
+    } else if (describe) {
+      document.getElementById('description').innerText = describe;
     } else {
       document.getElementById('description').innerText = 'Без описания';
     }
@@ -152,4 +168,5 @@ SUBMIT.addEventListener('click', (event) => {
 
 CLOSE_BTN.addEventListener('click', (event) => {
   document.getElementById('message-block').classList.add('hidden');
+  document.getElementById('form').reset();
 })
