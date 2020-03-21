@@ -66,6 +66,9 @@ function onScroll() {
         a.classList.remove('navigation_active');
         if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
           a.classList.add('navigation_active');    
+        } else if (el.getAttribute('id') === 'slider') {
+          let home = document.getElementById('home-link');
+          home.classList.add('navigation_active');
         }
       })
     }
