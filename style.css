@@ -147,12 +147,19 @@ header {
 
 
 .slider {
-  padding: 37.5px 0 43.5px 0;
+  padding: 51.5px 0 29.5px 0;
 
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
 
-  transition: background-color 0.5s, border-bottom 0.5s;
+  transition: all 0.2s;
+}
+
+.slider-next {
+  background-color: #648BF0;
+  border-bottom: 6px solid #648BF0;
+  
+  transition: all 0.2s;
 }
 
 .arrow {
@@ -166,17 +173,6 @@ header {
   cursor: pointer;
 }
 
-.slider__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-
-  position: relative;
-}
-
 .vertical-iPhone {
   margin: 1px 0 0 1px;
 }
@@ -187,13 +183,6 @@ header {
 
 .hidden {
   display: none;
-}
-
-.slider-next {
-  background-color: #648BF0;
-  border-bottom: 6px solid #648BF0;
-  
-  transition: background-color 0.5s, border-bottom 0.5s;
 }
 
 .dark-vertical {
@@ -216,17 +205,28 @@ header {
   position: absolute;
 }
 
-.slide-right,
-.slide-left,
-.slide-center {
-  transition: transform 0.5s linear;
+.slider__wrapper {
+  position: relative;
 }
 
-.slider-layout {
-  flex-wrap: nowrap;
-  position: relative;
-  max-width: 940px;
+.slides {
   overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+}
+
+.slides__item {
+  display: none;
+  position: relative;
+  animation: 0.2s ease-in-out;
+  height: 513px;
+}
+
+.slide-active,
+.slide-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #left-arrow {
@@ -241,24 +241,40 @@ header {
   top: 47.5%;
 }
 
-#slide1.slide-center {
-  transform: translate(70px, 0);
-}
-#slide1.slide-right {
-  transform: translate(1000px, 0);
-}
-#slide2.slide-center {
-  transform: translate(-600px, 0);
-}
-#slide2.slide-right {
-  transform: translate(770px, 0);
+.to-left {
+  animation-name: left;
 }
 
-#slide1.slide-left {
-  transform: translate(-850px, 0);
+.from-right {
+  animation-name: right;
 }
-#slide2.slide-left {
-  transform: translate(-1400px, 0);
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
 

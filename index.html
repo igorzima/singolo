@@ -27,31 +27,31 @@
     </div>
   </header>
   <section class="slider" id="slider">
-    <div class="wrapper">
-      <div class="layout layout-3-column slider-layout">
-        <div class="arrow">
-          <img class="left-arrow" id="left-arrow" src="./assets/images/left-arrow.png" alt="left-arrow">
+    <div class="wrapper slider__wrapper">
+      <div class="slides">
+        <div class="slides__item slide-active" id="slide1">
+            <div class="dark-vertical hidden" id="dark-vertical"></div>
+            <img class="vertical-iPhone" id="vertical-phone" src="assets/images/iPhone-vertical.png" alt="vertical" usemap="#vertical-phone" />
+            <div class="dark-horizontal hidden" id="dark-horizontal"></div>
+            <img class="horizontal-iPhone" id="horizontal-phone" src="assets/images/iPhone-horizontal.png" alt="horizontal" usemap="#horizontal-phone" />
+            <map name="vertical-phone">
+              <area shape="circle" coords="108, 428, 20" href="#" alt="vertical" id="vertical-phone__area">
+            </map>
+            <map name="horizontal-phone">
+              <area shape="circle" coords="30, 108, 20" href="#" alt="vertical" id="horizontal-phone__area">
+            </map>
         </div>
-        <div class="slider__info slide-center" id="slide1">
-          <div class="dark-vertical hidden" id="dark-vertical"></div>
-          <img class="vertical-iPhone" id="vertical-phone" src="assets/images/iPhone-vertical.png" alt="vertical" usemap="#vertical-phone" />
-          <div class="dark-horizontal hidden" id="dark-horizontal"></div>
-          <img class="horizontal-iPhone" id="horizontal-phone" src="assets/images/iPhone-horizontal.png" alt="horizontal" usemap="#horizontal-phone" />
-          <map name="vertical-phone">
-            <area shape="circle" coords="108, 428, 20" href="#" alt="vertical" id="vertical-phone__area">
-          </map>
-          <map name="horizontal-phone">
-            <area shape="circle" coords="30, 108, 20" href="#" alt="vertical" id="horizontal-phone__area">
-          </map>
+        <div class="slides__item" id="slide2">
+            <img src="./assets/images/slider2-leftphone.png" alt="">
+            <img src="./assets/images/slider2-centralphone.png" alt="">
+            <img src="./assets/images/slider2-rightphone.png" alt="">
         </div>
-        <div class="slider__info slide-right" id="slide2">
-          <img src="./assets/images/slider2-leftphone.png" alt="">
-          <img src="./assets/images/slider2-centralphone.png" alt="">
-          <img src="./assets/images/slider2-rightphone.png" alt="">
-        </div>
-        <div class="arrow" id="arrow">
-          <img class="right-arrow" id="right-arrow" src="./assets/images/right-arrow.png" alt="right-arrow">
-        </div>
+      </div>
+      <div class="arrow">
+        <img class="left-arrow" id="left-arrow" src="./assets/images/left-arrow.png" alt="left-arrow">
+      </div>
+      <div class="arrow">
+        <img class="right-arrow" id="right-arrow" src="./assets/images/right-arrow.png" alt="right-arrow">
       </div>
     </div>
   </section>

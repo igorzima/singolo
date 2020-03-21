@@ -15,6 +15,44 @@ const CLOSE_BTN = document.getElementById('close-btn');
 const MAIL = document.getElementById('mail');
 const FNAME = document.getElementById('fname');
 
+let items = document.querySelectorAll('.slides .slides__item');
+let currentItem = 0;
+let isEnabled = true;
+
+function changeCurrentItem(n) {
+	currentItem = (n + items.length) % items.length;
+}
+
+function hideItem(direction) {
+	isEnabled = false;
+  items[currentItem].classList.add(direction);
+  items[currentItem].addEventListener('animationend', function() {
+		this.classList.remove('slide-active', direction);
+  })
+}
+
+function showItem(direction) {
+  items[currentItem].classList.add('slide-next', direction);
+  items[currentItem].addEventListener('animationend', function() {
+    this.classList.remove('slide-next', direction);
+		this.classList.add('slide-active');
+		isEnabled = true;
+  })
+}
+
+function nextItem(n) {
+  hideItem('to-left');
+  changeCurrentItem(n + 1);
+  showItem('from-right');
+}
+
+function previousItem(n) {
+  hideItem('to-right');
+  changeCurrentItem(n - 1);
+  showItem('from-left');
+}
+
+
 document.addEventListener('scroll', onScroll);
 
 function onScroll() {
@@ -79,48 +117,26 @@ PORTFOLIO_LAYOUT.addEventListener('click', (event) => {
   }
 })
 
-LEFT_ARROW.addEventListener('click', (event) => {
+LEFT_ARROW.addEventListener('click', () => {
   if(SLIDER.classList.contains('slider-next')) {
     SLIDER.classList.remove('slider-next')
-
-    SLIDE1.classList.remove('slide-left');
-    SLIDE1.classList.remove('slide-right');
-    SLIDE1.classList.add('slide-center');
-    SLIDE2.classList.remove('slide-center');
-    SLIDE2.classList.add('slide-left');
-    SLIDE2.classList.remove('slide-right');
   } else {
     SLIDER.classList.add('slider-next')
-
-    SLIDE1.classList.add('slide-left');
-    SLIDE1.classList.remove('slide-center');
-    SLIDE1.classList.remove('slide-right');
-    SLIDE2.classList.add('slide-center');
-    SLIDE2.classList.remove('slide-left');
-    SLIDE2.classList.remove('slide-right');
   }
+  if (isEnabled) {
+    previousItem(currentItem);
+	}
 })
 
-RIGHT_ARROW.addEventListener('click', (event) => {
+RIGHT_ARROW.addEventListener('click', () => {
   if (SLIDER.classList.contains('slider-next')) {
     SLIDER.classList.remove('slider-next')
-
-    SLIDE1.classList.remove('slide-right');
-    SLIDE1.classList.remove('slide-left');
-    SLIDE1.classList.add('slide-center');
-    SLIDE2.classList.add('slide-right');
-    SLIDE2.classList.remove('slide-center');
-    SLIDE2.classList.remove('slide-left');
   } else {
     SLIDER.classList.add('slider-next')
-
-    SLIDE1.classList.add('slide-right');
-    SLIDE1.classList.remove('slide-center');
-    SLIDE1.classList.remove('slide-left');
-    SLIDE2.classList.add('slide-center');
-    SLIDE2.classList.remove('slide-right');
-    SLIDE2.classList.remove('slide-left');
   }
+  if (isEnabled) {
+    nextItem(currentItem);
+	}
 })
 
 VERTICAL_PHONE.addEventListener('click', (event) => {
