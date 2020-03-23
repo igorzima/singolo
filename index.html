@@ -42,9 +42,9 @@
             </map>
         </div>
         <div class="slides__item" id="slide2">
-            <img src="./assets/images/slider2-leftphone.png" alt="">
-            <img src="./assets/images/slider2-centralphone.png" alt="">
-            <img src="./assets/images/slider2-rightphone.png" alt="">
+            <img class="leftphone" src="./assets/images/slider2-leftphone.png" alt="">
+            <img class="centralphone" src="./assets/images/slider2-centralphone.png" alt="">
+            <img class="rightphone" src="./assets/images/slider2-rightphone.png" alt="">
         </div>
       </div>
       <div class="arrow">
@@ -61,7 +61,7 @@
       <p class="services__description">
         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor <span class="service__description_fix">ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</span>
       </p>
-      <div class="layout layout-3-column">
+      <div class="layout layout-3-column service__layout">
         <div class="service">
           <div class="service__icon">
             <span class="icon">
@@ -157,7 +157,7 @@
         <li class="portfolio__item">Grapfic Design</li>
         <li class="portfolio__item">Artwork</li>
       </ul>
-      <div class="layout layout-4-column" id="portfolio__layout">
+      <div class="layout layout-4-column portfolio-layout" id="portfolio__layout">
           <img class="portfolio__image" src="./assets/images/portfolio1.png" alt="portfolio1" />
           <img class="portfolio__image" src="./assets/images/portfolio2.png" alt="portfolio2" />
           <img class="portfolio__image" src="./assets/images/portfolio3.png" alt="portfolio3" />
@@ -184,10 +184,10 @@
           cursus commodo, tortor mauris condimentum nibh.</span
         >
       </p>
-      <div class="layout layout-3-column">
+      <div class="layout layout-3-column about-us-layout">
         <div class="workers">
           <div class="workers__image">
-            <img src="./assets/images/adam-jensen.png" alt="" />
+            <img class="worker__image" src="./assets/images/adam-jensen.png" alt="" />
           </div>
           <h3 class="name">Adam Jensen</h3>
           <p class="workers__description adam-jensen__description">
@@ -219,7 +219,7 @@
         </div>
         <div class="workers workers2">
           <div class="workers__image">
-            <img src="./assets/images/desmond-miles.png" alt="" />
+            <img class="worker__image" src="./assets/images/desmond-miles.png" alt="" />
           </div>
           <h3 class="name desmond-miles">Desmond Miles</h3>
           <p class="workers__description">
@@ -251,7 +251,7 @@
         </div>
         <div class="workers">
           <div class="workers__image">
-            <img src="./assets/images/scolara-visari.png" alt="" />
+            <img class="worker__image" src="./assets/images/scolara-visari.png" alt="" />
           </div>
           <h3 class="name">Scolara Visari</h3>
           <p class="workers__description">
@@ -294,7 +294,7 @@
           <input type="email" name="mail" id="mail" class="mail" placeholder="Email (Required)" required>
           <input type="text" name="subject" placeholder="Subject" id="subject">
           <textarea name="describe" id="describe" placeholder="Describe your project in detail..."></textarea>
-          <input type="submit" value="Submit" class="submit-btn" id="submit">
+          <input type="submit" value="SEND" class="submit-btn" id="submit">
         </form>
         <div class="message-block hidden" id="message-block" >
           <div class="message-window" id="message-window">

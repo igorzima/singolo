@@ -410,15 +410,15 @@ header {
   border: 1px solid #000000;
 }
 
-.layout-4-column {
-  max-height: 619px;
-  overflow: hidden;
+.portfolio-layout {
+  display: grid;
+  grid-template-areas: "a a a a";
+  grid-gap: 20px;
 }
 
 .portfolio__image {
   box-sizing: border-box;
   max-width: 220px;
-  margin-bottom: 20px;
   max-height: 187px;
   cursor: pointer;
 }
@@ -461,6 +461,10 @@ header {
 
 .workers2 {
   margin-left: -2px;
+}
+
+.worker__image {
+  width: 100%;
 }
 
 .name {
@@ -629,12 +633,13 @@ textarea:hover {
 
 .submit-btn {
   -ms-flex-item-align: end;
-  align-self: flex-end;
-  width: 100px;
+  align-self: flex-start;
+  width: 136px;
   margin-bottom: 0;
   padding: 0;
 
-  color: #ee8284;
+  color: #886A30;
+  background-color: #FBC65F;;
 }
 
 .submit-btn:hover {
@@ -794,6 +799,164 @@ textarea {
 
 
 
-@media(max-width: 1020px) {
+@media(max-width: 1019px) {
+  section {
+    border-top: 95px solid transparent;
+    margin-top: -95px;
+  }
+
+  .wrapper {
+    width: 689px;
+  }
+
+  header {
+    padding-bottom: 30px;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .navigation {
+    margin: 10px 0 0;
+  }
+
+
+
+  .slider {
+    padding: 0 0;
+  }
+
+  .slides__item {
+    height: 455px;
+  }
+
+  .vertical-iPhone {
+    height: 82%;
+    margin: 0;
+  }
+
+  .horizontal-iPhone {
+    width: 52.7%;
+    margin: 0 0 0 54px;
+  }
+
+  .leftphone,
+  .rightphone {
+    height: 50%;
+  }
+
+  .centralphone {
+    height: 80%;
+  }
+
+  #left-arrow {
+    left: -15px;
+  }
+
+  #right-arrow {
+    right: -15px;
+  }
+
+
+
+  .services {
+    padding: 40px 0 37px;
+    border-bottom: none;
+  }
+
+  .services p {
+    color: #767E9E;
+  }
+
+  .services__title {
+    margin: 0;
+  }
+
+  .services__description {
+    margin: 18px 0 28px 0;
+  }
+
+  .service__layout {
+    width: 655px;
+  }
+
+  .service {
+    margin-bottom: 27px;
+  }
+
+
+
+  .portfolio {
+    padding: 35px 0 67px;
+  }
+
+  .portfolio__description {
+    letter-spacing: normal;
+  }
   
+  .portfolio__navigation {
+    margin: 12px 0 28px;
+  }
+
+  .portfolio-layout {
+    grid-template-areas: "a a a";
+  }
+
+  .portfolio__image {
+    width: 100%;
+  }
+
+
+
+  .about-us {
+    padding: 28px 0 75px;
+  }
+
+  .about-us__description {
+    margin: 14px 0 28px;
+  }
+
+  .about-us-layout {
+    display: grid;
+    grid-template-areas: "a a a";
+    grid-gap: 2%;
+  }
+
+  .workers2 {
+    margin: 0;
+  }
+
+  .workers__description {
+    margin: 5px 0;
+  }
+
+
+  .quote {
+    padding: 29px 0 40px;
+  }
+
+  .quote__title {
+    margin-bottom: 14px;
+  }
+
+  .quote-description {
+    margin-bottom: 19px;
+  }
+
+  .form {
+    min-width: 64.2%;
+  }
+
+  input, textarea {
+    margin-bottom: 12px;
+  }
+
+  .contact-info {
+    width: 32.1%
+  }
+
+  .contact-description {
+    margin: 5px 0 10px 0;
+  }
 }
