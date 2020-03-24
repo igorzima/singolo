@@ -1,4 +1,5 @@
 const NAVIGATION = document.getElementById('navigation');
+const HEADER_NAVIGATION = document.getElementById('header__navigation');
 const PORTFOLIO_NAVIGATION = document.getElementById('portfolio__navigation');
 const PORTFOLIO_LAYOUT = document.getElementById('portfolio__layout');
 const LEFT_ARROW = document.getElementById('left-arrow');
@@ -14,6 +15,7 @@ const SUBMIT = document.getElementById('submit');
 const CLOSE_BTN = document.getElementById('close-btn');
 const MAIL = document.getElementById('mail');
 const FNAME = document.getElementById('fname');
+const HAMBURGER = document.getElementById('burger__container');
 
 let items = document.querySelectorAll('.slides .slides__item');
 let currentItem = 0;
@@ -108,6 +110,18 @@ PORTFOLIO_NAVIGATION.addEventListener('click', (event) => {
     let shuffleB = shuffle(b);
     PORTFOLIO_LAYOUT.innerHTML = "";
     shuffleB.forEach(item => PORTFOLIO_LAYOUT.append(item));
+  }
+})
+
+HAMBURGER.addEventListener('click', () => {
+  if (HEADER_NAVIGATION.classList.contains('header__navigation')) {
+    HEADER_NAVIGATION.classList.remove('header__navigation');
+    HEADER_NAVIGATION.classList.add('mobile__navigation');
+    HAMBURGER.classList.add('burger_rotate');
+  } else {
+    HEADER_NAVIGATION.classList.remove('mobile__navigation');
+    HEADER_NAVIGATION.classList.add('header__navigation');
+    HAMBURGER.classList.remove('burger_rotate');
   }
 })
 
