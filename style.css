@@ -127,7 +127,7 @@ header {
 
   vertical-align: middle;
 
-  background-color: #494e62;
+  background-color: #ffffff;
   border-radius: 50%;
 }
 
@@ -816,7 +816,6 @@ textarea {
   }
 
 
-
   .slider {
     padding: 0 0;
   }
@@ -905,6 +904,7 @@ textarea {
 
   .about-us {
     padding: 28px 0 75px;
+    border-bottom: none;
   }
 
   .about-us__description {
@@ -1165,12 +1165,16 @@ textarea {
 
   .about-us-layout {
     grid-template-areas: "a";
-    grid-gap: 2.6%;
-    height: 1418px;
+    grid-gap: 34px;
   }
 
   .workers {
     max-width: 100%;
+  }
+
+  .workers__image {
+    width: 314px;
+    height: 314px;
   }
 
   .name {
@@ -1189,6 +1193,7 @@ textarea {
 
   .quote {
     padding: 20px 0 42px;
+    border-bottom: none;
   }
 
   .form {
