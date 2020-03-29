@@ -141,6 +141,16 @@ header {
   text-decoration: underline;
 }
 
+.blur {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 
 .slider {
   padding: 51.5px 0 29.5px 0;
@@ -231,13 +241,13 @@ header {
   align-items: center;
 }
 
-#left-arrow {
+.left-arrow {
   position: absolute;
   top: 47.5%;
   left: 2px;
 }
 
-#right-arrow {
+.right-arrow {
   position: absolute;
   top: 47.5%;
   right: 0;
@@ -862,11 +872,11 @@ textarea {
     height: 80%;
   }
 
-  #left-arrow {
+  .left-arrow {
     left: -15px;
   }
 
-  #right-arrow {
+  .right-arrow {
     right: -15px;
   }
 
@@ -1119,16 +1129,6 @@ textarea {
     transition: all 0.3s linear;
   }
 
-  .blur {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
 
 
   .slider {
@@ -1204,6 +1204,11 @@ textarea {
     grid-template-areas: "a a";
   }
 
+  .portfolio__image {
+    max-width: 146px;
+    max-height: 124px;
+  }
+
   .portfolio__image:nth-child(1n + 9) {
     display: none;
   }
@@ -1271,6 +1276,10 @@ textarea {
     margin: 5px 0 5px 0;
   }
 
+  .message-window {
+    max-width: 260px;
+  }
+
 
 
   .copyright {
@@ -1279,5 +1288,29 @@ textarea {
 
   .footer-layout {
     justify-content: center;
+  }
+}
+
+@media (max-width: 374px) {
+  .left-arrow {
+    left: 0;
+  }
+
+  .right-arrow {
+    right: 0;
+  }
+
+  .vertical-iPhone {
+    height: 70%;
+  }
+
+  .horizontal-iPhone {
+    width: 40%;
+  }
+
+  .message-window {
+    left: 0;
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
   }
 }
