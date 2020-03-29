@@ -1091,6 +1091,7 @@ textarea {
     transform: translate(0, 0);
 
     transition: transform 0.3s linear;
+    z-index: 9;
   }
 
   .navigation {
@@ -1116,6 +1117,16 @@ textarea {
     justify-content: center;
 
     transition: all 0.3s linear;
+  }
+
+  .blur {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
 

@@ -118,11 +118,13 @@ HAMBURGER.addEventListener('click', () => {
     HEADER_NAVIGATION.classList.add('mobile__navigation');
     HAMBURGER.classList.add('burger_rotate');
     document.querySelector('.header-layout').style = 'margin-right: 50%;';
+    document.querySelector('.blur').style = 'display: block';
   } else {
     HEADER_NAVIGATION.classList.remove('mobile__navigation');
     HEADER_NAVIGATION.classList.add('header__navigation');
     HAMBURGER.classList.remove('burger_rotate');
     document.querySelector('.header-layout').style = 'margin-right: 0';
+    document.querySelector('.blur').style = 'display: none';
   }
 })
 
