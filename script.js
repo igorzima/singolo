@@ -213,4 +213,5 @@ HEADER_NAVIGATION.querySelectorAll('.navigation__item').forEach(el => el.addEven
   HAMBURGER.classList.remove('burger_rotate');
   HEADER_NAVIGATION.classList.add('header__navigation');
   document.querySelector('.header-layout').style = 'margin-right: 0';
+  document.querySelector('.blur').style = 'display: none';
 }))
